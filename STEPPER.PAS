@@ -20,12 +20,14 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Stepper;
+unit STEPPER;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  Forms, Graphics, Classes, Controls, ExtCtrls, WinProcs;
+  Forms, Graphics, Classes, Controls, ExtCtrls, LCLIntf, LCLType, LMessages;
 
 type
   TformStep = class(TForm)
@@ -49,7 +51,7 @@ implementation
 
 Uses mainForm, assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TformStep.FormCreate(Sender: TObject);
 Var i       : SmallInt;
@@ -297,7 +299,7 @@ begin
          end
     else begin
              pos := oldPos;
-             messageBeep(0)
+             //messageBeep(0)
          end
   end;
 

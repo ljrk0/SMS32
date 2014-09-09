@@ -20,13 +20,17 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Lift;    // BevelLift Top = 232   Left = 45   Width = 66   Height = 86
+unit LIFT;
+
+{$MODE Delphi}
+
+    // BevelLift Top = 232   Left = 45   Width = 66   Height = 86
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, Buttons, StdCtrls, Assem;
+  SysUtils, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, Buttons, StdCtrls, Assem, LCLIntf, LCLType, LMessages;
 
 type
   TFormLift = class(TForm)
@@ -65,7 +69,7 @@ implementation
 
 Uses MainForm;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TFormLift.setView;
 begin

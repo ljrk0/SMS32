@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit ramHex;
+unit RAMHEX;
+
+{$MODE Delphi}
 
 interface
 
@@ -65,7 +67,7 @@ implementation
 
 uses Assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TFormRamHex.paintAll;
 var i : Integer;

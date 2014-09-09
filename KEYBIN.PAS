@@ -20,13 +20,15 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Keybin;
+unit KEYBIN;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls;
+  SysUtils, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, StdCtrls, LCLIntf, LCLType, LMessages;
 
 type
   TFormKeybIn = class(TForm)
@@ -49,7 +51,7 @@ implementation
 
 Uses MainForm, Assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TFormKeybIn.FormKeyPress(Sender: TObject; var Key: Char);
 begin

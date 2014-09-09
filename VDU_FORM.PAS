@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Vdu_form;
+unit VDU_FORM;
+
+{$MODE Delphi}
 
 interface
 
@@ -51,7 +53,7 @@ implementation
 
 uses Assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TFormVdu.reScale;
 begin

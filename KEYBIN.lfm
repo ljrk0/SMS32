@@ -1,0 +1,37 @@
+object FormKeybIn: TFormKeybIn
+  Left = 204
+  Top = 18
+  HelpContext = 8
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Keyboard Input'
+  ClientHeight = 39
+  ClientWidth = 428
+  Color = clNavy
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OldCreateOrder = True
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 2
+    Top = 1
+    Width = 420
+    Height = 37
+    Caption = ' Waiting for keyboard input > '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+end

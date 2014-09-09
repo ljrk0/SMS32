@@ -1,0 +1,28 @@
+object formStep: TformStep
+  Left = 1068
+  Top = 768
+  HelpContext = 7
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Stepper Motor - Port 5'
+  ClientHeight = 218
+  ClientWidth = 200
+  Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'System'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object stepImage: TImage
+    Left = 0
+    Top = 0
+    Width = 200
+    Height = 218
+    Align = alClient
+  end
+end

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="15">
+      <Unit0>
+        <Filename Value="sms32v50.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Mainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Mainform"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="7" Y="85"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="HEATER.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="HEATER"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="LIFT.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="LIFT"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="82" Y="33"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="MAZE.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="MAZE"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="21" Y="14"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="RAMHEX.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="RAMHEX"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="SEVSEG.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="SEVSEG"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="STEPPER.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="STEPPER"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="292"/>
+        <CursorPos X="16" Y="302"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="TLIGHT.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="TLIGHT"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="VDU_FORM.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="VDU_FORM"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="KeyPadFm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="KeyPadFm"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Assem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="Assem"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="943"/>
+        <CursorPos X="26" Y="956"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="FORMABT.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="FORMABT"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="75" Y="29"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="KeybForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="KeybForm"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="276"/>
+        <CursorPos X="3" Y="285"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="KEYBIN.PAS"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="KEYBIN"/>
+        <EditorIndex Value="14"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="56" Y="31"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="27" HistoryIndex="26">
+      <Position1>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="33" Column="71" TopLine="20"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="29" Column="91" TopLine="21"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="31" Column="59" TopLine="21"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="33" Column="74" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="87" Column="5" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="84" Column="20" TopLine="77"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1416" Column="3" TopLine="1407"/>
+      </Position8>
+      <Position9>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="87" Column="24" TopLine="78"/>
+      </Position9>
+      <Position10>
+        <Filename Value="FORMABT.PAS"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="KeybForm.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="FORMABT.PAS"/>
+        <Caret Line="29" Column="79" TopLine="1"/>
+      </Position12>
+      <Position13>
+        <Filename Value="KeybForm.pas"/>
+        <Caret Line="285" Column="29" TopLine="276"/>
+      </Position13>
+      <Position14>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="88" Column="7" TopLine="79"/>
+      </Position14>
+      <Position15>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="366" Column="18" TopLine="357"/>
+      </Position15>
+      <Position16>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="612" Column="20" TopLine="603"/>
+      </Position16>
+      <Position17>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1300" Column="74" TopLine="1291"/>
+      </Position17>
+      <Position18>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1334" Column="2" TopLine="1331"/>
+      </Position18>
+      <Position19>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1377" Column="10" TopLine="1363"/>
+      </Position19>
+      <Position20>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1383" Column="1" TopLine="1375"/>
+      </Position20>
+      <Position21>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="1435" Column="8" TopLine="1426"/>
+      </Position21>
+      <Position22>
+        <Filename Value="STEPPER.PAS"/>
+        <Caret Line="30" Column="76" TopLine="1"/>
+      </Position22>
+      <Position23>
+        <Filename Value="STEPPER.PAS"/>
+        <Caret Line="302" Column="25" TopLine="1"/>
+      </Position23>
+      <Position24>
+        <Filename Value="Assem.pas"/>
+        <Caret Line="41" Column="29" TopLine="1"/>
+      </Position24>
+      <Position25>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="48" Column="29" TopLine="39"/>
+      </Position25>
+      <Position26>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="90" Column="7" TopLine="78"/>
+      </Position26>
+      <Position27>
+        <Filename Value="Mainform.pas"/>
+        <Caret Line="85" Column="7" TopLine="78"/>
+      </Position27>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

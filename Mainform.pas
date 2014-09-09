@@ -22,13 +22,15 @@
 *)
 unit Mainform;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, WinTypes, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, StdCtrls, Menus, TabNotBk, Assem,
+  SysUtils, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, StdCtrls, Menus, (*TabNotBk,*) Assem,
   Grids, Buttons, iniFiles, TLight, SevSeg, Stepper, Maze, Heater,
-  Vdu_form, keyBin, Printers, WinProcs, lift, ComCtrls, ShellAPI;
+  Vdu_form, keyBin, Printers, lift, ComCtrls, ShellAPI, (*PrintersDlgs,*) LCLIntf, LCLType, LMessages;
 
 type
   IndexNode = class(TObject)
@@ -80,12 +82,7 @@ type
     MenuViewMaze: TMenuItem;
     MenuViewStepperMotor: TMenuItem;
     MenuFileN2: TMenuItem;
-    MenuFilePrintSource: TMenuItem;
-    MenuFilePrintListFile: TMenuItem;
-    PrintDialog1: TPrintDialog;
-    PrinterSetupDialog1: TPrinterSetupDialog;
-    MenuFileN3: TMenuItem;
-    MenuFilePrintSetup: TMenuItem;
+    //MenuFilePrintSetup: TMenuItem;
     MenuHelp: TMenuItem;
     MenuHelpAbout: TMenuItem;
     MenuHelpContents: TMenuItem;
@@ -145,7 +142,7 @@ type
     MemoList: TMemo;
     SpeedButton1: TSpeedButton;
     TabSheetLog: TTabSheet;
-    RichEdit1: TRichEdit;
+    RichEdit1: TMemo;
     SpeedButtonKeyb: TSpeedButton;
     SpeedButton2: TSpeedButton;
     CheckBoxRunLog: TCheckBox;
@@ -197,9 +194,9 @@ type
     procedure MenuViewStepperMotorClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure CheckBoxCLOClick(Sender: TObject);
-    procedure MenuFilePrintSourceClick(Sender: TObject);
-    procedure MenuFilePrintSetupClick(Sender: TObject);
-    procedure MenuFilePrintListFileClick(Sender: TObject);
+    //procedure MenuFilePrintSourceClick(Sender: TObject);
+    //procedure MenuFilePrintSetupClick(Sender: TObject);
+    //procedure MenuFilePrintListFileClick(Sender: TObject);
     procedure CheckBoxPrintPauseClick(Sender: TObject);
     procedure MenuHelpContentsClick(Sender: TObject);
     procedure MenuHelpAboutClick(Sender: TObject);
@@ -279,7 +276,7 @@ implementation
 
 uses formAbt, ramHex, KeybForm, KeyPadFm;
 
-{$R *.DFM}
+{$R *.lfm}
 
 constructor IndexNode.create;
 begin
@@ -361,7 +358,7 @@ begin
   end
   else
   begin
-    if fileExists(openDialog1.fileName) then
+    if FileExists(openDialog1.fileName) { *Converted from FileExists* } then
     begin
       memoSource.lines.loadFromFile(openDialog1.fileName);
       saveDialog1.FileName := openDialog1.FileName;
@@ -607,7 +604,7 @@ begin
 
       s := s + paramstr(paramcount);
 
-      if fileExists(s) then
+      if FileExists(s) { *Converted from FileExists* } then
       begin
         memoSource.lines.loadFromFile(s);
         saveDialog1.FileName := s;
@@ -1295,7 +1292,7 @@ procedure TFormMain.saveIniFile;
                 end;
 begin
 {$WARNINGS OFF}
-  if fileExists(iniFile) AND((FileGetAttr(iniFile) AND faReadOnly) <> 0) then
+  if FileExists(iniFile) { *Converted from FileExists* } AND((FileGetAttr(iniFile) { *Converted from FileGetAttr* } AND faReadOnly) <> 0) then
 {$WARNINGS ON}
   begin
     messageDlg(iniFile + ' could not be updated.  It may be read only.',
@@ -1329,108 +1326,108 @@ begin
   end
 end;
 
-procedure TFormMain.MenuFilePrintSourceClick(Sender: TObject);
-var page   : Integer;
-                Procedure Foo(StartAt : Integer);
-                Var i : Integer;
-                    f : textFile;
-                begin
-                  AssignPrn(f);
-                  Rewrite(f);
+//procedure TFormMain.MenuFilePrintSourceClick(Sender: TObject);
+//var page   : Integer;
+//                Procedure Foo(StartAt : Integer);
+//                Var i : Integer;
+//                    f : textFile;
+//                begin
+//                  AssignPrn(f);
+//                  Rewrite(f);
+//
+//                  printer.canvas.font := memoSource.font;
+//
+//                  Writeln(f, 'Page ' + intToStr(startAt + 1) + '    ' + caption);
+//                  Writeln(f, '');
+//                  Writeln(f, '');
+//                  Writeln(f, '');
+//
+//                  startAt := StartAt * 50;
+//
+//                  for i := StartAt to StartAt + 49 do
+//                  begin
+//                    if i = memoSource.Lines.Count then break;
+//
+//                    Writeln(f, memoSource.Lines[i]);
+//                  end;
+//
+//                  System.CloseFile(f)
+//                end;
+//begin
+//  if memoSource.Lines.Count = 0 then
+//  begin
+//    messageDlg('There is nothing to print.', mtInformation, [mbOK], 0)
+//  end
+//  else if PrintDialog1.Execute then
+//  begin
+//    for page := 0 to memoSource.Lines.Count div 50 do
+//    begin
+//      if shouldPauseBeforePrinting then
+//      begin
+//        if messageDlg('Print next page?', mtConfirmation, [mbYes, mbCancel], 0) <> mrYes then
+//        begin
+//          break
+//        end
+//      end;
+//
+//      foo(page)
+//    end
+//  end
+//end;
 
-                  printer.canvas.font := memoSource.font;
+//procedure TFormMain.MenuFilePrintSetupClick(Sender: TObject);
+//begin
+//  PrinterSetupDialog1.Execute
+//end;
 
-                  Writeln(f, 'Page ' + intToStr(startAt + 1) + '    ' + caption);
-                  Writeln(f, '');
-                  Writeln(f, '');
-                  Writeln(f, '');
-
-                  startAt := StartAt * 50;
-
-                  for i := StartAt to StartAt + 49 do
-                  begin
-                    if i = memoSource.Lines.Count then break;
-
-                    Writeln(f, memoSource.Lines[i]);
-                  end;
-
-                  System.CloseFile(f)
-                end;
-begin
-  if memoSource.Lines.Count = 0 then
-  begin
-    messageDlg('There is nothing to print.', mtInformation, [mbOK], 0)
-  end
-  else if PrintDialog1.Execute then
-  begin
-    for page := 0 to memoSource.Lines.Count div 50 do
-    begin
-      if shouldPauseBeforePrinting then
-      begin
-        if messageDlg('Print next page?', mtConfirmation, [mbYes, mbCancel], 0) <> mrYes then
-        begin
-          break
-        end
-      end;
-
-      foo(page)
-    end
-  end
-end;
-
-procedure TFormMain.MenuFilePrintSetupClick(Sender: TObject);
-begin
-  PrinterSetupDialog1.Execute
-end;
-
-procedure TFormMain.MenuFilePrintListFileClick(Sender: TObject);
-var page   : Integer;
-                Procedure Foo(StartAt : Integer);
-                Var i : Integer;
-                    f : textFile;
-                begin
-                  AssignPrn(f);
-                  Rewrite(f);
-
-                  printer.canvas.font := memoList.font;
-
-                  Writeln(f, 'Page ' + intToStr(startAt + 1) + '    ' + caption);
-                  Writeln(f, '');
-                  Writeln(f, '');
-                  Writeln(f, '');
-
-                  startAt := StartAt * 50;
-
-                  for i := StartAt to StartAt + 49 do
-                  begin
-                    if i = memoList.Lines.Count then break;
-
-                    Writeln(f, memoList.Lines[i]);
-                  end;
-
-                  System.CloseFile(f)
-                end;
-begin
-  if memoList.Lines.Count = 0 then
-  begin
-    messageDlg('There is nothing to print.', mtInformation, [mbOK], 0)
-  end
-  else if PrintDialog1.Execute then
-  begin
-    for page := 0 to memoList.Lines.Count div 50 do
-    begin
-      if shouldPauseBeforePrinting then
-      begin
-        if messageDlg('Print next page?', mtConfirmation, [mbYes, mbCancel], 0) <> mrYes then
-        begin
-          break
-        end
-      end;
-
-      foo(page)
-    end
-  end
-end;
+//procedure TFormMain.MenuFilePrintListFileClick(Sender: TObject);
+//var page   : Integer;
+//                Procedure Foo(StartAt : Integer);
+//                Var i : Integer;
+//                    f : textFile;
+//                begin
+//                  AssignPrn(f);
+//                  Rewrite(f);
+//
+//                  printer.canvas.font := memoList.font;
+//
+//                  Writeln(f, 'Page ' + intToStr(startAt + 1) + '    ' + caption);
+//                  Writeln(f, '');
+//                  Writeln(f, '');
+//                  Writeln(f, '');
+//
+//                  startAt := StartAt * 50;
+//
+//                  for i := StartAt to StartAt + 49 do
+//                  begin
+//                    if i = memoList.Lines.Count then break;
+//
+//                    Writeln(f, memoList.Lines[i]);
+//                  end;
+//
+//                  System.CloseFile(f)
+//                end;
+//begin
+//  if memoList.Lines.Count = 0 then
+//  begin
+//    messageDlg('There is nothing to print.', mtInformation, [mbOK], 0)
+//  end
+//  else if PrintDialog1.Execute then
+//  begin
+//    for page := 0 to memoList.Lines.Count div 50 do
+//    begin
+//      if shouldPauseBeforePrinting then
+//      begin
+//        if messageDlg('Print next page?', mtConfirmation, [mbYes, mbCancel], 0) <> mrYes then
+//        begin
+//          break
+//        end
+//      end;
+//
+//      foo(page)
+//    end
+//  end
+//end;
 
 procedure TFormMain.CheckBoxPrintPauseClick(Sender: TObject);
 begin
@@ -1449,12 +1446,7 @@ var p : PChar;
 begin
   p := StrNew(PChar(helpFile));
 
-  shellExecute(handle,
-               Nil,
-               p,
-               Nil,
-               Nil,
-               SW_SHOWMAXIMIZED);
+   OpenDocument(p); { *Converted from ShellExecute* }
 
   StrDispose(p);
 end;
@@ -2005,12 +1997,7 @@ end;
 
 procedure TFormMain.SpeedButton4Click(Sender: TObject);
 begin
-  shellExecute(handle,
-               Nil,
-               'http://groups.yahoo.com/group/learn-asm/',
-               Nil,
-               Nil,
-               0)
+  OpenURL('http://groups.yahoo.com/group/learn-asm/') { *Converted from ShellExecute* }
 end;
 
 procedure TFormMain.error(msg : string);

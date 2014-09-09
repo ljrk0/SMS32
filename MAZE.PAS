@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Maze;
+unit MAZE;
+
+{$MODE Delphi}
 
 interface
 
@@ -48,7 +50,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 Uses mainForm, Assem;
 

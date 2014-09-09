@@ -1,0 +1,30 @@
+object formMaze: TformMaze
+  Left = 205
+  Top = 189
+  HelpContext = 6
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Snake and Maze'
+  ClientHeight = 271
+  ClientWidth = 200
+  Color = clLime
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'System'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object mazeImage: TImage
+    Left = 0
+    Top = 0
+    Width = 200
+    Height = 271
+    Align = alClient
+    ParentShowHint = False
+    ShowHint = False
+  end
+end

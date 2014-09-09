@@ -22,21 +22,23 @@
 *)
 
 {
-	Änderung 20.12.2011
-	Es wurde ein Basepointer als Register BP hinzugefügt. 
+	Ã„nderung 20.12.2011
+	Es wurde ein Basepointer als Register BP hinzugefÃ¼gt. 
 	
-	Änderung 23.12.2011
-	Zum SP-Register dürfen Hexwerte mit ADD addiert werden. Damit können Werte
-	im Stack ohne Aufruf von POP gelöscht werden.
+	Ã„nderung 23.12.2011
+	Zum SP-Register dÃ¼rfen Hexwerte mit ADD addiert werden. Damit kÃ¶nnen Werte
+	im Stack ohne Aufruf von POP gelÃ¶scht werden.
 }
 
 unit Assem;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls;
+  SysUtils, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, LCLIntf, LCLType, LMessages;
 
 const
   ZZZ     : smallInt =  $2;                            { FLAGS }
@@ -65,7 +67,7 @@ const
   IP = 4;
   SP = 5;
   SR = 6;
-  BP = 7;                                        //Änderung 20.12.2011
+  BP = 7;                                        //Ã„nderung 20.12.2011
   BeyondRAM = 'Can not execute code beyond the end of memory.';
   RegNotExi = 'Invalid register in machine code.';
 
@@ -111,7 +113,7 @@ type
     ramAddr        : smallInt;
 
     ram            : Array[0..255] of tokNode;                          
-    regs           : Array[0..  7] of smallInt;  //Änderung 20.12.2011 
+    regs           : Array[0..  7] of smallInt;  //Ã„nderung 20.12.2011 
    
     procedure calcJumps;
 
@@ -133,10 +135,10 @@ type
     procedure imovRM;
     procedure imovRR;
     procedure imovPP; 
-    procedure imovRMxp;		//Änderung 20.12.2011
-    procedure imovRMxm;     //Änderung 20.12.2011
-    procedure imovMxpR;     //Änderung 20.12.2011
-    procedure imovMxmR;     //Änderung 20.12.2011
+    procedure imovRMxp;		//Ã„nderung 20.12.2011
+    procedure imovRMxm;     //Ã„nderung 20.12.2011
+    procedure imovMxpR;     //Ã„nderung 20.12.2011
+    procedure imovMxmR;     //Ã„nderung 20.12.2011
     procedure cmp;
     procedure inOut;
     procedure jmp;
@@ -183,7 +185,7 @@ type
     function  trim(s : string) : string;
     function  validLabel(s, colon : string) : boolean;
     function  validReg(n : smallInt) : Boolean;
-    function  validPoi(n : smallInt) : Boolean;   //Änderung 20.12.2011
+    function  validPoi(n : smallInt) : Boolean;   //Ã„nderung 20.12.2011
     function  ___isoz_ : String;
   end;
 
@@ -195,7 +197,7 @@ implementation
 uses Mainform, Stepper, Maze, Heater, Vdu_form,
      keyBin, tLight, sevSeg, lift, ramHex, KeybForm, KeyPadFm;
 
-{$R *.DFM}
+{$R *.lfm}
 
 { ---------------------------------------------------------------------- }
 
@@ -225,7 +227,7 @@ begin
              'DL = ' + IntToHex($FF AND regs[DL], 2) + #9 +
              'IP = ' + IntToHex($FF AND regs[IP], 2) + #9 +
              'SP = ' + IntToHex($FF AND regs[SP], 2) + #9 +
-             'BP = ' + IntToHex($FF AND regs[BP], 2) + #9 +   //Änderung 20.12.2011
+             'BP = ' + IntToHex($FF AND regs[BP], 2) + #9 +   //Ã„nderung 20.12.2011
              'SR = ' + ___isoz_);
 
     FormMain.RichEdit1.Perform(EM_SCROLL, SB_BOTTOM, 0);
@@ -402,7 +404,7 @@ begin
       FormRamHex.ipsp
     end;
 
-    BP:                                          //Änderung 20.12.2011
+    BP:                                          //Ã„nderung 20.12.2011
     begin
       FormMain.labelBP.Caption := 'BP ' + intToReg(aValue);
       FormMain.labelBP.Color := clYellow;
@@ -445,7 +447,7 @@ begin
   regAssign(IP, 0,   dontSetFlags);
   regAssign(SR, 0,   dontSetFlags);
   regAssign(SP, HexBF, dontSetFlags);
-  regAssign(BP, HexBF,   dontSetFlags);          //Änderung 20.12.2011
+  regAssign(BP, HexBF,   dontSetFlags);          //Ã„nderung 20.12.2011
 end;
 
 { ---------------------------------------------------------------------- }
@@ -544,7 +546,7 @@ end;
 
 function Taaa.validReg(n : smallInt) : Boolean;
 begin
-  if n in [0, 1, 2, 3, 7] then result := true else result := false   //Änderung 20.12.2011
+  if n in [0, 1, 2, 3, 7] then result := true else result := false   //Ã„nderung 20.12.2011
 end;
 
 function Taaa.validPoi(n : smallInt) : Boolean;
@@ -624,7 +626,7 @@ end;
 
 { ---------------------------------------------------------------------- }
 
-function Taaa.ramTo3 : string;               { ram[regs[IP] + 3].opToken }   //Änderung 20.12.2011
+function Taaa.ramTo3 : string;               { ram[regs[IP] + 3].opToken }   //Ã„nderung 20.12.2011
 begin
   result := ram[HexFF AND regs[IP] + 3].Token
 end;
@@ -654,7 +656,7 @@ end;
 
 function Taaa.ramOPX : smallInt;              { ram[regs[IP] + 3].opHex  }
 begin
-  result := ram[HexFF AND regs[IP] + 3].opHex    //Änderung 20.12.2011
+  result := ram[HexFF AND regs[IP] + 3].opHex    //Ã„nderung 20.12.2011
 end;
                                                                            
 { ---------------------------------------------------------------------- }
@@ -668,7 +670,7 @@ begin
   FormMain.labelSR.Color := clBtnFace;
   FormMain.labelSP.Color := clBtnFace;
   FormMain.labelIP.Color := clBtnFace;
-  FormMain.labelBP.Color := clBtnFace            //Änderung 20.12.2011     
+  FormMain.labelBP.Color := clBtnFace            //Ã„nderung 20.12.2011     
       
 end;
 
@@ -948,7 +950,8 @@ begin
   assignFile(f, formMain.saveDialog1.fileName);
   reset(f, 1);
   blockRead(f, buf^, sizeOf(TBuffer), numGot);
-  system.closeFile(f);
+  System.Close(f);
+  //system.closeFile(f);
 
   if numGot <> FormMain.memoSource.getTextLen then
   begin
@@ -1261,7 +1264,7 @@ begin
     result := true;
     incIII
   end
-  else if currTokStr = 'SP' then                     // Änderung 23.12.2011
+  else if currTokStr = 'SP' then                     // Ã„nderung 23.12.2011
   begin
     currToken.opHex   := 5;
     currToken.opAscii := '05';
@@ -1275,7 +1278,7 @@ begin
   end
 end;
 
-function Taaa.mightHavePointer : Boolean;     //Änderung 20.12.2011
+function Taaa.mightHavePointer : Boolean;     //Ã„nderung 20.12.2011
 begin
   if FormMain.CheckBoxAsmLog.Checked then
   begin
@@ -1345,7 +1348,7 @@ begin
     result := true;
     incIII
   end
-  else if currTokStr = 'BP' then                 //Änderung 20.12.2011
+  else if currTokStr = 'BP' then                 //Ã„nderung 20.12.2011
   begin
     currToken.opHex   := 7;
     currToken.opAscii := '07';
@@ -1433,7 +1436,7 @@ begin
   regAssign(IP, 0,   dontSetFlags);
   regAssign(SR, 0,   dontSetFlags);
   regAssign(SP, HexBF, dontSetFlags);
-  regAssign(BP, HexBF, dontSetFlags);            //Änderung 20.12.2011 
+  regAssign(BP, HexBF, dontSetFlags);            //Ã„nderung 20.12.2011 
 end;
 
 { ---------------------------------------------------------------------- }
@@ -2146,12 +2149,12 @@ begin
                                         arg1.opAscii + ' ' +
                                         arg2.opAscii, false)
                          end
-                         else if mightHave('+') then           { MOV    AL,[AL+    }   //Änderung 20.12.2011
+                         else if mightHave('+') then           { MOV    AL,[AL+    }   //Ã„nderung 20.12.2011
                               begin
                                 argx:= currToken;
-                                if mightHaveHexNum then        { MOV    AL,[AL+01  }   //Änderung 20.12.2011
+                                if mightHaveHexNum then        { MOV    AL,[AL+01  }   //Ã„nderung 20.12.2011
                                 begin
-                                  if mustHave(']') then        { MOV    AL,[AL+01] }   //Änderung 20.12.2011
+                                  if mustHave(']') then        { MOV    AL,[AL+01] }   //Ã„nderung 20.12.2011
                                   begin
                                     mov.setTokenValues($D6);
                                     generate(mov);
@@ -2175,12 +2178,12 @@ begin
                                   error('Expected a hexadecimal number Got ' + currTokStr, currToken)
                                 end
                               end
-                              else if mightHave('-') then      { MOV    AL,[AL-  }      //Änderung 20.12.2011
+                              else if mightHave('-') then      { MOV    AL,[AL-  }      //Ã„nderung 20.12.2011
                                    begin
                                      argx:= currToken;
-                                     if mightHaveHexNum then   { MOV    AL,[AL-01  }    //Änderung 20.12.2011
+                                     if mightHaveHexNum then   { MOV    AL,[AL-01  }    //Ã„nderung 20.12.2011
                                      begin
-                                       if mustHave(']') then   { MOV    AL,[AL-01]  }   //Änderung 20.12.2011
+                                       if mustHave(']') then   { MOV    AL,[AL-01]  }   //Ã„nderung 20.12.2011
                                        begin
                                          mov.setTokenValues($D7);
                                          generate(mov);
@@ -2221,12 +2224,12 @@ begin
 	  error('Expected a '',''  Got ' + currTokStr, currToken)
 	end
   end
-  else if mightHavePointer then                        { MOV    SP     }     //Änderung 20.12.2011    }
+  else if mightHavePointer then                        { MOV    SP     }     //Ã„nderung 20.12.2011    }
        begin
-         if mustHave(',') then                         { MOV    SP,    }     //Änderung 20.12.2011
+         if mustHave(',') then                         { MOV    SP,    }     //Ã„nderung 20.12.2011
          begin
            arg2 := currToken;
-           if mightHavePointer then                    { MOV    SP,BP  }     //Änderung 20.12.2011
+           if mightHavePointer then                    { MOV    SP,BP  }     //Ã„nderung 20.12.2011
            begin
              mov.setTokenValues($DD);
              generate(mov);
@@ -2309,17 +2312,17 @@ begin
 			  	  	     error('Expected a '',''  Got ' + currTokStr, currToken)
 					   end
                      end
-                     else if mightHave('+') then                   { MOV    [AL+       }   //Änderung 20.12.2011
+                     else if mightHave('+') then                   { MOV    [AL+       }   //Ã„nderung 20.12.2011
                           begin
                             argx:= currToken;
-                            if mightHaveHexnum then                { MOV    [AL+01     }   //Änderung 20.12.2011
+                            if mightHaveHexnum then                { MOV    [AL+01     }   //Ã„nderung 20.12.2011
                             begin
-                              if mustHave(']') then                { MOV    [AL+01]    }   //Änderung 20.12.2011
+                              if mustHave(']') then                { MOV    [AL+01]    }   //Ã„nderung 20.12.2011
                               begin
-                                if mustHave(',') then              { MOV    [AL+01],   }   //Änderung 20.12.2011
+                                if mustHave(',') then              { MOV    [AL+01],   }   //Ã„nderung 20.12.2011
                                 begin
                                   arg2 := currToken;
-                                  if mightHaveRegister then        { MOV    [AL+01],BL }   //Änderung 20.12.2011
+                                  if mightHaveRegister then        { MOV    [AL+01],BL }   //Ã„nderung 20.12.2011
                                   begin
                                     mov.setTokenValues($D8);
                                     generate(mov);
@@ -2360,14 +2363,14 @@ begin
                           else if mightHave('-') then
                                begin
                                  argx:= currToken;
-                                 if mightHaveHexnum then                  { MOV    [AL-       }   //Änderung 20.12.2011
-                                 begin                                    { MOV    [AL-01     }   //Änderung 20.12.2011
-                                   if mustHave(']') then                  { MOV    [AL-01]    }   //Änderung 20.12.2011
+                                 if mightHaveHexnum then                  { MOV    [AL-       }   //Ã„nderung 20.12.2011
+                                 begin                                    { MOV    [AL-01     }   //Ã„nderung 20.12.2011
+                                   if mustHave(']') then                  { MOV    [AL-01]    }   //Ã„nderung 20.12.2011
                                    begin
-                                     if mustHave(',') then                { MOV    [AL-01],   }   //Änderung 20.12.2011
+                                     if mustHave(',') then                { MOV    [AL-01],   }   //Ã„nderung 20.12.2011
                                      begin
                                        arg2 := currToken;
-                                       if mightHaveRegister then          { MOV    [AL-01],BL }   //Änderung 20.12.2011
+                                       if mightHaveRegister then          { MOV    [AL-01],BL }   //Ã„nderung 20.12.2011
                                        begin
                                          mov.setTokenValues($D9);
                                          generate(mov);
@@ -2971,7 +2974,7 @@ end;
 
 { ---------------------------------------------------------------------- }
  
-procedure Taaa.imovRMxp;             { MOV    BL,[AL+01]    D6 01 00 01 }   //Änderung 20.12.2011
+procedure Taaa.imovRMxp;             { MOV    BL,[AL+01]    D6 01 00 01 }   //Ã„nderung 20.12.2011
 var reg1, reg2, regx : smallInt;
 begin
   reg1 := ramOP1;
@@ -3016,7 +3019,7 @@ begin
   end;
 end;
 
-procedure Taaa.imovRMxm;       { MOV    BL,[AL-01]    D7 01 00 01 }   //Änderung 20.12.2011
+procedure Taaa.imovRMxm;       { MOV    BL,[AL-01]    D7 01 00 01 }   //Ã„nderung 20.12.2011
 var reg1, reg2, regx : smallInt;
 begin
   reg1 := ramOP1;
@@ -3058,7 +3061,7 @@ begin
   end;
 end;
 
-procedure Taaa.imovMxpR;             { MOV    [BL+01],AL    D8 01 00 01 }   //Änderung 20.12.2011
+procedure Taaa.imovMxpR;             { MOV    [BL+01],AL    D8 01 00 01 }   //Ã„nderung 20.12.2011
 var reg1, reg2, regx : smallInt;
 begin
   reg1 := ramOP1;
@@ -3100,7 +3103,7 @@ begin
   end;
 end;
 
-procedure Taaa.imovMxmR;             { MOV    [BL-01],AL    D9 01 00 01 }   //Änderung 20.12.2011
+procedure Taaa.imovMxmR;             { MOV    [BL-01],AL    D9 01 00 01 }   //Ã„nderung 20.12.2011
 var reg1, reg2, regx : smallInt;
 begin
   reg1 := ramOP1;

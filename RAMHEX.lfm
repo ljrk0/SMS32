@@ -1,0 +1,77 @@
+object FormRamHex: TFormRamHex
+  Left = 266
+  Top = 136
+  Width = 373
+  Height = 322
+  Caption = 'RAM Source Code View'
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -11
+  Font.Name = 'Courier New'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnResize = FormResize
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Panel1: TPanel
+    Left = 0
+    Top = 260
+    Width = 365
+    Height = 28
+    Align = alBottom
+    TabOrder = 0
+    object RadioButtonHex: TRadioButton
+      Left = 7
+      Top = 7
+      Width = 135
+      Height = 17
+      Caption = '&X Hexadecimal'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RadioButtonHexClick
+    end
+    object RadioButtonASCII: TRadioButton
+      Left = 149
+      Top = 7
+      Width = 87
+      Height = 17
+      Caption = '&Y ASCII'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = RadioButtonASCIIClick
+    end
+    object RadioButtonSource: TRadioButton
+      Left = 244
+      Top = 7
+      Width = 95
+      Height = 17
+      Caption = '&Z Source'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      TabStop = True
+      OnClick = RadioButtonSourceClick
+    end
+  end
+end

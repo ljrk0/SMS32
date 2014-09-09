@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Heater;
+unit HEATER;
+
+{$MODE Delphi}
 
 interface
 
@@ -57,7 +59,7 @@ implementation
 
 Uses mainForm, assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 { **** thermostat ****************************************************** }
 

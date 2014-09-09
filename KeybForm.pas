@@ -22,6 +22,8 @@
 *)
 unit KeybForm;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -52,7 +54,7 @@ implementation
 
 uses Mainform, Assem;
 
-{$R *.dfm}
+{$R *.lfm}
 
 { ========================================================================== }
 
@@ -74,7 +76,7 @@ begin
     begin
       if X <  61 then Label1.Caption := '!' else
       if X <  89 then Label1.Caption := '"' else
-      if X < 117 then Label1.Caption := '£' else
+      if X < 117 then Label1.Caption := 'Â£' else
       if X < 145 then Label1.Caption := '$' else
       if X < 173 then Label1.Caption := '%' else
       if X < 202 then Label1.Caption := '^' else
@@ -280,7 +282,7 @@ begin
     begin
       if X <  61 then kk := ord('!') else
       if X <  89 then kk := ord('"') else
-      if X < 117 then kk := ord('£') else
+//      if X < 117 then kk := ord('Â£') else
       if X < 145 then kk := ord('$') else
       if X < 173 then kk := ord('%') else
       if X < 202 then kk := ord('^') else

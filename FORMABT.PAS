@@ -20,11 +20,13 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit formAbt;
+unit FORMABT;
+
+{$MODE Delphi}
 
 interface
 
-uses Forms, StdCtrls, Controls, ExtCtrls, Classes, Graphics, ShellAPI;
+uses Forms, StdCtrls, Controls, ExtCtrls, Classes, Graphics, (*ShellAPI,*) lclintf;
 
 type
   TformAboutBox = class(TForm)
@@ -53,7 +55,7 @@ implementation
 
 uses Mainform;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TformAboutBox.FormCreate(Sender: TObject);
 begin
@@ -64,21 +66,11 @@ procedure TformAboutBox.EditWebsiteClick(Sender: TObject);
 begin
   if sender = EditWebsite then
   begin
-    shellExecute(handle,
-                 Nil,
-                 'http://www.softwareforeducation.com/',
-                 Nil,
-                 Nil,
-                 0)
+    OpenURL('http://www.softwareforeducation.com/') { *Converted from ShellExecute* }
   end
   else if sender = EditEMail then
   begin
-    shellExecute(handle,
-                 Nil,
-                 'mailto:nbauers@samphire.demon.co.uk',
-                 Nil,
-                 Nil,
-                 0)
+     OpenDocument('mailto:nbauers@samphire.demon.co.uk') { *Converted from ShellExecute* }
   end
 end;
 

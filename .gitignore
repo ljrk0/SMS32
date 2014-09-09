@@ -5,6 +5,10 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#conv and backup folders
+bckup/
+.legacy/
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -26,8 +30,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 

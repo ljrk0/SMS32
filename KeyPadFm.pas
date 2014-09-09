@@ -22,6 +22,8 @@
 *)
 unit KeyPadFm;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -50,7 +52,7 @@ implementation
 
 uses Assem, Mainform;
 
-{$R *.dfm}
+{$R *.lfm}
 
 { ========================================================================== }
 

@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Sevseg;
+unit SEVSEG;
+
+{$MODE Delphi}
 
 interface
 
@@ -47,7 +49,7 @@ implementation
 
 Uses mainForm, assem;
 
-{$R *.DFM}
+{$R *.lfm}
 
 { **** sevenseg displays *********************************************** }
 

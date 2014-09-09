@@ -1,0 +1,21 @@
+object formVdu: TformVdu
+  Left = 437
+  Top = 380
+  Width = 200
+  Height = 90
+  HelpContext = 4
+  Caption = 'VDU C0..FF'
+  Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Courier New'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  OnActivate = FormActivate
+  OnPaint = FormPaint
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 16
+end

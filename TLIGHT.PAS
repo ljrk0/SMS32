@@ -20,7 +20,9 @@
 
     If not, see <http://www.gnu.org/licenses/>.
 *)
-unit Tlight;
+unit TLIGHT;
+
+{$MODE Delphi}
 
 interface
 
@@ -46,7 +48,7 @@ implementation
 
 Uses Assem, MainForm;
 
-{$R *.DFM}
+{$R *.lfm}
 
 { ---------------------------------------------------------------------- }
 
