@@ -10,8 +10,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <TopLine Value="50"/>
+        <CursorPos X="1" Y="69"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -26,8 +26,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="54"/>
-        <CursorPos X="96" Y="57"/>
+        <TopLine Value="27"/>
+        <CursorPos X="82" Y="31"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -40,7 +40,7 @@
         <UnitName Value="HEATER"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="55"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -53,7 +53,7 @@
         <UnitName Value="LIFT"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="34"/>
         <CursorPos X="82" Y="33"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -62,14 +62,12 @@
       <Unit4>
         <Filename Value="MAZE.PAS"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="formMaze"/>
         <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
         <UnitName Value="MAZE"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="11" Y="6"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -81,7 +79,7 @@
         <UnitName Value="RAMHEX"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="61"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -90,27 +88,33 @@
       <Unit6>
         <Filename Value="SEVSEG.PAS"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="formSevenSeg"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="SEVSEG"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="31"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit6>
       <Unit7>
         <Filename Value="STEPPER.PAS"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="formStep"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="STEPPER"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="292"/>
+        <TopLine Value="199"/>
         <CursorPos X="16" Y="302"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
       <Unit8>
@@ -155,27 +159,33 @@
       <Unit11>
         <Filename Value="Assem.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="aaa"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="Assem"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="943"/>
-        <CursorPos X="26" Y="956"/>
+        <TopLine Value="1"/>
+        <CursorPos X="26" Y="930"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit11>
       <Unit12>
         <Filename Value="FORMABT.PAS"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="formAboutBox"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="FORMABT"/>
         <EditorIndex Value="12"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="75" Y="29"/>
+        <TopLine Value="59"/>
+        <CursorPos X="27" Y="63"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
       <Unit13>
@@ -185,7 +195,7 @@
         <UnitName Value="KeybForm"/>
         <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="276"/>
+        <TopLine Value="1"/>
         <CursorPos X="3" Y="285"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -198,7 +208,7 @@
         <UnitName Value="KEYBIN"/>
         <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="68"/>
         <CursorPos X="56" Y="31"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -208,7 +218,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="Mainform.pas"/>
         <Caret Line="1" Column="1" TopLine="1"/>
@@ -317,6 +327,10 @@
         <Filename Value="Mainform.pas"/>
         <Caret Line="85" Column="7" TopLine="78"/>
       </Position27>
+      <Position28>
+        <Filename Value="sms32v50.lpr"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position28>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
