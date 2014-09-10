@@ -6,7 +6,7 @@ ehthumbs.db
 Desktop.ini
 
 #conv and backup folders
-bckup/
+backup/
 .legacy/
 
 # Recycle Bin used on file shares
